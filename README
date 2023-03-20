@@ -6,9 +6,9 @@ node modules used
 install them using the command  npm install express uuid mongoose
 create a mongoDB local database then change the MongoDB uri in model>contactmodels.js file
 
-to start run any of these command
+to start, run any of these command
 npm run start
-npm run dev
+npm run dev //this command requires nodemon module installed
 
 POST --TO CREATE DATA
 send a post request to to http://localhost:5000/createContact with the data to insert data
