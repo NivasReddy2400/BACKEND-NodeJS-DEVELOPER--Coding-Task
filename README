@@ -1,0 +1,59 @@
+node modules used 
+1.express
+2.uuid
+3.mongoose
+
+install them create a mongoDB local database then change the connection uri in model>contactmodels.js file
+
+POST --TO CREATE DATA
+send a post request to to http://localhost:5000/createContact with the data to insert data
+example json
+{
+    "first_name":"lewis",
+    "last_name":"hamilton",
+    "email":"lew@gmail.com",
+    "mobile_number":1234567890
+}
+
+contact_id will be assigned when you submit the post req 
+
+THE BELOW DATA WILL STORED IN DB
+{
+    "contact_id": "39ac80d2-af24-4941-8de9-d0e01f7803b1",
+    "first_name": "lewis",
+    "last_name": "hamilton",
+    "email": "lew@gmail.com",
+    "mobile_number": 1234567890,
+    "_id": "64180b29cd56bab42325d16e",
+    "__v": 0
+}
+
+GET -- USE THE CONTACT ID TO RETRIVE THE DATA
+
+http://localhost:5000/getContact/contact_id
+
+replace the contact_id with the actual contact_id
+example
+http://localhost:5000/getContact/39ac80d2-af24-4941-8de9-d0e01f7803b1
+
+
+PATCH -- UPDATE THE USER,USED PATCH INSTED OF POST AS THIS IS BEST PRACTICE WHILE WORKING REST APIs
+
+localhost:5000/updateContact/contact_id
+example
+localhost:5000/updateContact/0e88dbbb-460f-4b59-a26d-ee832cc527bb
+
+here you can update the document partially
+any of these values can be updated
+{
+    "first_name":"seb",
+    "last_name":"vet",
+    "email":"seb@gmail.com",
+    "mobile_number":3234567890
+}
+
+DELETE -- TO DELETE THE CONTACT
+
+localhost:5000/deleteContact/contact_id
+example:
+localhost:5000/deleteContact/0e88dbbb-460f-4b59-a26d-ee832cc527bb
